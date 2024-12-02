@@ -1,14 +1,11 @@
 CC = gcc
 CFLAGS = -Wall -g
-OBJS = src/main.o src/emotion.o src/system_status.o src/weather.o src/player.o
+OBJS = main.o emotion.o system_status.o weather.o player.o
 
 all: program
 
 program: $(OBJS)
     $(CC) $(CFLAGS) -o program $(OBJS)
 
-%.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
-
 clean:
-    rm -f src/*.o program
+    rm -f *.o program
